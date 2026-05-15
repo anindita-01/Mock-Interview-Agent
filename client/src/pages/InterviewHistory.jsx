@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+﻿import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from "axios"
-import { ServerUrl } from '../App'
+import { ServerUrl } from '../config/api'
 import { FaArrowLeft } from 'react-icons/fa'
 function InterviewHistory() {
     const [interviews, setInterviews] = useState([])
@@ -116,3 +116,4 @@ function InterviewHistory() {
 }
 
 export default InterviewHistory
+

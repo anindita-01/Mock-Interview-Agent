@@ -8,7 +8,7 @@ import { useState } from 'react'
 import { useRef } from 'react'
 import { useEffect } from 'react'
 import axios from "axios"
-import { ServerUrl } from '../App'
+import { ServerUrl } from '../config/api'
 import { BsArrowRight } from 'react-icons/bs'
 
 function Step2Interview({ interviewData, onFinish }) {
@@ -455,4 +455,5 @@ setIsSubmitting(false)
 }
 
 export default Step2Interview
+
 
