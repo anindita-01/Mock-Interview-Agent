@@ -25,26 +25,19 @@ const allowedOrigins = [
     .map((origin) => origin.trim().replace(/\/$/, ""))
 
 app.use(cors({
-    origin(origin, callback) {
-        if (!origin || allowedOrigins.includes(origin.replace(/\/$/, ""))) {
-            return callback(null, true)
-        }
-
-        console.warn(`Blocked by CORS: ${origin}`)
-        return callback(new Error("Not allowed by CORS"))
-    },
-    credentials:true,
-    methods:["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    allowedHeaders:["Content-Type", "Authorization"]
+    origin: allowedOrigins,
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
 }))
 
 app.use(express.json())
 app.use(cookieParser())
 
-app.use("/api/auth" , authRouter)
+app.use("/api/auth", authRouter)
 app.use("/api/user", userRouter)
-app.use("/api/interview" , interviewRouter)
-app.use("/api/payment" , paymentRouter)
+app.use("/api/interview", interviewRouter)
+app.use("/api/payment", paymentRouter)
 
 const PORT = process.env.PORT || 6000
 app.listen(PORT , ()=>{
