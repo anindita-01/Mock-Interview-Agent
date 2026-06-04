@@ -10,7 +10,7 @@ function InterviewReport() {
   useEffect(()=>{
     const fetchReport = async () => {
       try {
-        const result = await axios.get(ServerUrl + "/api/interview/report/" + id , {withCredentials:true})
+        const result = await axios.get(ServerUrl + "/api/interview/report/" + id)
 
         console.log(result.data)
         setReport(result.data)
@@ -20,7 +20,7 @@ function InterviewReport() {
     }
 
     fetchReport()
-  },[])
+  },[id])
 
 
     if (!report) {

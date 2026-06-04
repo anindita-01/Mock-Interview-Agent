@@ -253,7 +253,7 @@ function Step2Interview({ interviewData, onFinish }) {
         answer,
         timeTaken:
           currentQuestion.timeLimit - timeLeft,
-      } , {withCredentials:true})
+      })
 
       setFeedback(result.data.feedback)
       speakText(result.data.feedback)
@@ -289,7 +289,7 @@ setIsSubmitting(false)
     stopMic()
     setIsMicOn(false)
     try {
-      const result = await axios.post(ServerUrl+ "/api/interview/finish" , { interviewId} , {withCredentials:true})
+      const result = await axios.post(ServerUrl+ "/api/interview/finish" , { interviewId})
 
       console.log(result.data)
       onFinish(result.data)

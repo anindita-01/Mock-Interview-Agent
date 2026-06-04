@@ -1,9 +1,9 @@
 import express from "express"
 import dotenv from "dotenv"
 import connectDb from "./config/connectDb.js"
-import cookieParser from "cookie-parser"
 dotenv.config()
 import cors from "cors"
+import cookieParser from "cookie-parser"
 import authRouter from "./routes/auth.route.js"
 import userRouter from "./routes/user.route.js"
 import interviewRouter from "./routes/interview.route.js"
@@ -28,7 +28,7 @@ app.use(cors({
     origin: allowedOrigins,
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"]
+    allowedHeaders: ["Content-Type"]
 }))
 
 app.use(express.json())

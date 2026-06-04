@@ -70,7 +70,7 @@ function Pricing() {
         planId: plan.id,
         amount: amount,
         credits: plan.credits,
-      },{withCredentials:true})
+      })
       
 
       const options = {
@@ -82,7 +82,7 @@ function Pricing() {
       order_id: result.data.id,
 
       handler:async function (response) {
-        const verifypay = await axios.post(ServerUrl + "/api/payment/verify" ,response , {withCredentials:true})
+        const verifypay = await axios.post(ServerUrl + "/api/payment/verify" ,response)
         dispatch(setUserData(verifypay.data.user))
 
           alert("Payment successful. Credits added!");

@@ -10,7 +10,7 @@ function InterviewHistory() {
     useEffect(() => {
         const getMyInterviews = async () => {
             try {
-                const result = await axios.get(ServerUrl + "/api/interview/get-interview", { withCredentials: true })
+                const result = await axios.get(ServerUrl + "/api/interview/get-interview")
 
                 setInterviews(result.data)
 
