@@ -16,9 +16,6 @@ build/
 
 # Logs
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
 
 # Editor directories and system files
 .vscode/
@@ -29,6 +26,42 @@ Thumbs.db
 .env.*.local
 
 # Lockfiles should be committed
-# package-lock.json
-# yarn.lock
-# pnpm-lock.yaml
+# Ignore everything by default, then explicitly allow client/ and server/
+/*
+
+# Keep these files tracked
+!.gitignore
+!README.md
+!AUTH_SETUP.md
+!package.json
+!package-lock.json
+
+# Allow client and server directories and their contents
+!/client/
+!/client/**
+!/server/
+!/server/**
+
+# Ignore node_modules everywhere
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+client/dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and system files
+.vscode/
+.DS_Store
+Thumbs.db
